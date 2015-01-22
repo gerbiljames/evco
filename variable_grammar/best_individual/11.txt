@@ -1,0 +1,124 @@
+
+                 
+
+                private int number = 0;
+
+                private boolean bool = true;
+
+                 
+
+                private void setNumber(int newNumber) {
+
+                    number = newNumber;
+
+                }
+
+                 
+
+                private int getNumber() {
+
+                    return number;
+
+                }
+
+                 
+
+                private void setBool(boolean newBool) {
+
+                    bool = newBool;
+
+                }
+
+                 
+
+                private boolean getBool(){
+
+                    return bool;
+
+                }
+
+
+                 
+    // This is run in its own thread and is responsible for performing
+
+      // the majority of the actions of simpler tanks.
+
+      public void run() {
+
+                 
+          while (true) {
+
+            setBack(getGunHeading());
+setTurnGunRight(getRadarHeading());
+
+                 
+
+          // This statement executes all of the set actions at once.
+
+          execute();
+
+        }
+
+                 
+
+      }
+
+                 
+
+      // This method is called when a robot is spotted by the radar.
+
+      public void onScannedRobot(ScannedRobotEvent e) {
+
+        fire(getHeading());
+
+      }
+
+                 
+
+      // This method is called when the robot bumps into a wall.
+
+      public void onHitWall(HitWallEvent e) {
+
+        back(getVelocity());
+
+      }
+
+                 
+
+      // This method is called when the robot is hit by a bullet.
+
+      public void onHitByBullet(HitByBulletEvent e) {
+
+        ahead(49.9);
+
+      }
+
+                 
+
+      // This method is called when one of this robots bullets hits.
+
+      public void onBulletHit(BulletHitEvent e) {
+
+        if (getBool()) {
+fire(getNumber());
+}
+else {
+fire(8);
+}
+ahead(getEnergy());
+
+      }
+
+                 
+
+      // This method is called when a this robot hits another robot.
+
+      public void onHitRobot(HitRobotEvent e) {
+
+        ahead(getHeading());
+
+      }
+
+                 
+
+                 

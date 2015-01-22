@@ -1,0 +1,26 @@
+
+      // This is run in its own thread and is responsible for performing
+      // the majority of the actions of simpler tanks.
+      public void run() {
+
+        // You could perform some initialisation on your
+        // tank here, such as setting each of its colours.
+
+        while (true) {
+          setResume();
+          setTurnRight(getTime());
+          setBack(getTime());
+          execute();
+        }
+
+      }
+
+      // This method is called when a robot is spotted by the radar.
+      public void onScannedRobot(ScannedRobotEvent e) {
+        fire(1);
+      }
+
+      // This method is called when the robot bumps into a wall.
+      public void onHitWall(HitWallEvent e) {
+        setTurnRadarLeft(getGunHeat());
+      }    

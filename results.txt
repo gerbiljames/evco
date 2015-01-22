@@ -1,0 +1,4 @@
+Results for 5 rounds
+Robot Name	    Total Score    	Survival	Surv Bonus	Bullet Dmg	Bullet Bonus	Ram Dmg * 2	Ram Bonus	 1sts 	 2nds 	 3rds 	
+1st: sample.Advanced	514 (52%)	100	20	328	43	23	0	2	3	0	
+2nd: sample.VelociRobot	466 (48%)	150	30	239	28	19	0	3	2	0	
